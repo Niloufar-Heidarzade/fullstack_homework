@@ -1,0 +1,60 @@
+.directory-dropdown {
+  background-color: white;
+  width: 260px;
+  color: gray;
+
+}
+.directory-box img {
+  width: 10px;
+  transform: rotate(180deg);
+  height: 40px;
+}
+.directory-box {
+  display: flex;
+  align-items: center;
+  gap:10px;
+  padding-left: 10px;
+}
+.directories div{
+  padding-left: 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 260px;
+  position: relative;
+}
+.no-directories {
+  display: none;
+}
+.activeDirectory {
+  color: rgb(228, 66, 66);
+  background-color: rgb(238, 227, 235);
+  border-right: 4px solid rgb(228, 66, 66);
+}
+.directories {
+  width: 260px;
+}
+.trash-icon , .edit-icon {
+  width: 15px;
+  position: absolute;
+}
+.trash-icon {
+  right: 10px;
+}
+.edit-icon {
+  right: 30px;
+}
+.new-directory {
+  margin-left: 30px;
+  margin-top: 10px;
+  background-color: white;
+  border-style: dashed;
+  border-color: rgb(193, 190, 190);
+  color: gray;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+}
+.directories div:hover {
+  color: rgb(228, 66, 66);
+}

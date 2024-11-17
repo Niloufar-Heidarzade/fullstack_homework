@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+    "_id": "234234232r234234234",
+    "title": "Complete Backend Homework",
+    "description": "Implement CRUD operations for directory and task collections",
+    "completed": false,
+    "important": true,
+    "deadline": "2024-10-20T00:00:00Z"
+  },
+  {
+    "_id": "111111111111111111",
+   "title": "Prepare for Frontend Exam",
+    "description": "Revise React and Vue basics",
+    "completed": false,
+    "important": false,
+    "deadline": "2024-11-18T00:00:00Z"
+  },
+  {
+    "_id": "333333333333333333",
+    "title": "Fix API Issues",
+    "description": "Resolve pagination and sorting issues in API",
+    "completed": true,
+    "important": false,
+    "deadline": "2024-11-14T00:00:00Z"
+  }
+]
+}

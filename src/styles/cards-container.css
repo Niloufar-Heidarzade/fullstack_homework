@@ -1,0 +1,11 @@
+.cards-container {
+  width: calc(100% - 280px);
+  margin-left: 280px;
+}
+.cards {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 50px;
+}

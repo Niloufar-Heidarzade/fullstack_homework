@@ -1,0 +1,167 @@
+.card {
+  background-color: rgb(245, 247, 252);
+  width: 250px;
+  height: 210px;
+  margin-top: 40px;
+  border-radius: 5px;
+  position: relative;
+  padding: 15px 15px 15px 15px;
+}
+
+.star-icon {
+  width: 20px;
+  position: absolute;
+  stroke: gray;
+  fill: rgb(245, 247, 252);
+  bottom: 10px;
+  right: 80px;
+}
+.trash-icon {
+  width: 20px !important;
+  position: absolute !important;
+  bottom: 10px;
+  fill: gray;
+  right: 50px !important;
+}
+.options-icon {
+  width: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  fill: gray;
+}
+.tag {
+  background: rgb(249, 174, 174);
+  color: rgb(172, 10, 10);
+  font-size: 14px;
+  width: 60px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: absolute;
+  right: 10px;
+  top: -30px;
+}
+.card h4 {
+  font-size: 13px;
+  color: rgb(86, 86, 86);
+  margin-bottom: 8px;
+}
+.card .title-and-description p{
+  font-size: 13px;
+  color: gray;
+  font-weight: 500;
+  margin-top: 0px;
+}
+.date {
+  display: flex;
+  margin-top: 50px;
+  gap: 5px;
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 55px;
+}
+.card .date svg{
+  stroke: gray;
+  width: 18px;
+}
+.card .date p {
+  color: gray;
+  font-size: 13px;
+}
+.divider {
+  position: absolute;
+  color: rgb(196, 195, 195);
+  bottom: 40px;
+}
+.uncompleted-button {
+  border: none;
+  border-radius: 20px;
+  color: rgb(92, 54, 7);
+  background-color: rgb(243, 231, 141);
+  width: 120px;
+  height: 30px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 8px;
+}
+.completed-button {
+  border: none;
+  border-radius: 20px;
+  color: rgb(30, 69, 30);
+  background-color: rgb(183, 234, 183);
+  width: 100px;
+  height: 30px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 8px;
+}
+.important-star {
+  width: 20px;
+  stroke: red;
+  fill: red;
+  position: absolute;
+  bottom: 10px;
+  right: 80px;
+}
+.completed-title {
+  font-size: 13px;
+  color: white;
+  margin-bottom: 8px;
+}
+.completed-description {
+  font-size: 13px;
+  color: rgb(170, 168, 168);
+  font-weight: 500;
+  margin-top: 0px;
+}
+.completed-date-icon {
+  stroke: rgb(170, 168, 168);
+  width: 18px;
+}
+.completed-date {
+  color: rgb(170, 168, 168);
+  font-size: 13px;
+}
+.completed-trash {
+  width: 20px;
+  fill: white;
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+}
+.completed-star {
+  width: 20px;
+  stroke: white;
+  fill: rgb(116, 58, 215);
+  position: absolute;
+  bottom: 10px;
+  right: 80px;
+}
+.completed-options {
+  width: 5px;
+  fill: white;
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}
+.card:hover {
+  box-shadow: 0px 0px 10px rgb(114, 114, 114);
+}
+.card-completed {
+  background-color: rgb(116, 58, 215);
+  width: 250px;
+  height: 210px;
+  margin-top: 40px;
+  border-radius: 5px;
+  position: relative;
+  padding: 15px 15px 15px 15px;
+}
+.card-bottom {
+  display: flex;
+  position: relative;
+}
+

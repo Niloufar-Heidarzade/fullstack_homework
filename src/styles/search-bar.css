@@ -1,0 +1,23 @@
+.search-task-input {
+  border: none;
+  background-color: rgb(245, 247, 252);
+  outline: none;
+}
+.search-task-bar {
+  width: 210px;
+  position: relative;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(245, 247, 252);
+}
+.search-task-svg {
+  width: 15px;
+  position: absolute;
+  right: 10px;
+}
+.search-task-bar:focus-within {
+  outline: 2px solid rgb(116, 58, 215);
+}

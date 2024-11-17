@@ -1,0 +1,14 @@
+.new-task-button {
+  background-color: rgb(116, 58, 215);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 12px;
+  height: 35px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.new-task-button:hover{
+  background-color: rgb(95, 50, 173);
+}
