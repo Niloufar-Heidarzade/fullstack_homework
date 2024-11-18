@@ -1,6 +1,6 @@
 .cards-container {
-  width: calc(100% - 280px);
-  margin-left: 280px;
+  width: calc(100% - 280px); 
+  margin-left: 280px; 
 }
 .cards {
   display: flex;
@@ -8,4 +8,14 @@
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 50px;
+}
+@media (max-width : 945px) {
+  .cards-container {
+    margin-left: 0px;
+    width: 100vw;
+  }
+  .cards {
+    justify-content: flex-start;
+    
+  }
 }

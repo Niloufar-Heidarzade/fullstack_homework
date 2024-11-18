@@ -23,3 +23,26 @@ header {
   gap: 5px;
   align-items: flex-start;
 }
+.menu-icon {
+  width: 20px;
+  cursor: pointer;
+}
+.menuAndSearch {
+  display: flex;
+  gap: 5px;
+}
+@media (max-width : 945px) {
+  header {
+    margin-left: 0px;
+    align-items: center;
+    width: 100%;
+  }
+  .header-first-line , .header-second-line {
+    width: 100%;
+  }
+}
+@media (min-width : 945px) {
+  .menu-icon {
+    display: none;
+  }
+}

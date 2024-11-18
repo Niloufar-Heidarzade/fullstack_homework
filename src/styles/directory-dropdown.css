@@ -4,6 +4,9 @@
   color: gray;
 
 }
+.small-directory-dropdown {
+  width: 190px;
+}
 .directory-box img {
   width: 10px;
   transform: rotate(180deg);
@@ -23,6 +26,14 @@
   width: 260px;
   position: relative;
 }
+.small-directories div {
+  padding-left: 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 190px;
+  position: relative;
+}
 .no-directories {
   display: none;
 }
@@ -33,6 +44,9 @@
 }
 .directories {
   width: 260px;
+}
+.small-dircetories {
+  width: 190px;
 }
 .trash-icon , .edit-icon {
   width: 15px;
@@ -55,6 +69,6 @@
   width: 60px;
   height: 30px;
 }
-.directories div:hover {
+.directories div:hover , .small-directories div:hover{
   color: rgb(228, 66, 66);
 }

@@ -7,10 +7,24 @@
   flex-direction: column;
   align-items: center;
 }
+.small-sidebar {
+  width : 190px;
+  z-index: 9999;
+  background-color: white;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .sidebar .title {
   font-size: 17px;
   color: rgb(82, 81, 81);
   font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.small-sidebar .title {
   margin-top: 20px;
   margin-bottom: 30px;
 }
@@ -30,4 +44,14 @@
 }
 .sidebar-option:hover {
   color: rgb(228, 66, 66);
+}
+@media (max-width : 935px) {
+  .sidebar {
+    display: none;
+  }
+}
+@media (min-width : 935px) {
+  .small-sidebar {
+    display: none;
+  }
 }

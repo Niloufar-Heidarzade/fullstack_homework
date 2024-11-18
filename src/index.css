@@ -6,3 +6,10 @@ body {
   background-color: rgb(219, 223, 234);
   font-family: "Open Sans", sans-serif;
 }
+
+@media (max-width: 945px) {
+  .page-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

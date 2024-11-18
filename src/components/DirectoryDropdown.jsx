@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import { controlEdit, controlNew } from "../redux/directoriesSlice";
 controlEdit
 
-function DirectoryDropdown() {
+function DirectoryDropdown({size}) {
   
   const dispatch = useDispatch();
   const [isOpen , setIsOpen] = useState(false);
@@ -15,12 +15,12 @@ function DirectoryDropdown() {
     dispatch(controlNew());
   }
   return(
-    <div className="directory-dropdown">
+    <div className={size === "small" ? "directory-dropdown small-directory-dropdown" : "directory-dropdown"}>
       <div className="directory-box" onClick={() => {setIsOpen(!isOpen)}}>
         <img src="./images/arrow.svg" />
         <p>Directories</p>
       </div>
-      <div className={isOpen ? "directories" : "no-directories"}>
+      <div className={isOpen ? size === "small" ? "small-directories" : "directories" : "no-directories"}>
         <div className="activeDirectory">
           Main
           <img src="./images/edit.svg"  className="edit-icon" onClick={handleEdit}/>
