@@ -12,10 +12,11 @@
 @media (max-width : 945px) {
   .cards-container {
     margin-left: 0px;
-    width: 100vw;
+    width: 100%;
   }
   .cards {
     justify-content: flex-start;
-    
+    gap: 10px;
+    width: 100%;
   }
 }
