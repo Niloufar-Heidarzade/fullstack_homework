@@ -16,15 +16,15 @@ function Sidebar({screenSize}) {
         dispatch(controlSidebar());
       };
     }
-    if(isSidebarOpen) {
+    if(isSidebarOpen && screenSize === "small") {
       document.addEventListener("mousedown" , handleClickOutside);
     } 
     return () => {
       document.removeEventListener("mousedown" , handleClickOutside);
     }
-  },[isSidebarOpen,dispatch])
+  },[isSidebarOpen,dispatch]);
   return (
-    <aside className={screenSize === "small" ? "small-sidebar" : "sidebar"} ref={sidebarRef}>
+    <aside className={screenSize === "small" ? "small-sidebar" : "sidebar"} ref={sidebarRef} >
       <div className="title">TO-DO LIST</div>
       <AddNewTaskButton size={screenSize === "small" ? "medium" : "big"}/>
       <div className="all-tasks sidebar-option">All tasks</div>
