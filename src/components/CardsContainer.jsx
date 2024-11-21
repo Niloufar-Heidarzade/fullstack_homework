@@ -9,9 +9,9 @@ function CardsContainer() {
   return(
     <section className="cards-container">
       <div className="cards">
-      {taskData.map((task) => {
+      {taskData.map((task , index) => {
         return(
-          <TaskCard key={task.id} title={task.title} description={task.description}  completed={task.completed} important={task.important} deadline={task.deadline}/>
+          <TaskCard isFirst={index === 0} key={task.id} title={task.title} description={task.description}  completed={task.completed} important={task.important} deadline={task.deadline}/>
         )
       })}
       </div>

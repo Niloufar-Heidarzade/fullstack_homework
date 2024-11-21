@@ -107,33 +107,33 @@
   bottom: 10px;
   right: 80px;
 }
-.completed-title {
+.first-title {
   font-size: 13px;
   color: white;
   margin-bottom: 8px;
 }
-.completed-description {
+.first-description {
   font-size: 13px;
   color: rgb(170, 168, 168);
   font-weight: 500;
   margin-top: 0px;
 }
-.completed-date-icon {
+.first-date-icon {
   stroke: rgb(170, 168, 168);
   width: 18px;
 }
-.completed-date {
+.first-date {
   color: rgb(170, 168, 168);
   font-size: 13px;
 }
-.completed-trash {
+.first-trash {
   width: 20px;
   fill: white;
   position: absolute;
   right: 50px;
   bottom: 10px;
 }
-.completed-star {
+.first-star {
   width: 20px;
   stroke: white;
   fill: rgb(116, 58, 215);
@@ -141,17 +141,17 @@
   bottom: 10px;
   right: 80px;
 }
-.completed-options {
+.first-options {
   width: 5px;
   fill: white;
   position: absolute;
   right: 30px;
   bottom: 10px;
 }
-.card:hover , .card-completed:hover{
+.card:hover , .card-first:hover{
   box-shadow: 0px 0px 10px rgb(114, 114, 114);
 }
-.card-completed {
+.card-first {
   background-color: rgb(116, 58, 215);
   width: 250px;
   height: 210px;
