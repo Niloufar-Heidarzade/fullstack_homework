@@ -33,9 +33,9 @@ function Header() {
           {screenWidth > 560 && <SearchBar size={"small"}/>}
         </div>
         <TodayDate />
-        <AddNewTaskButton size="small" />
+        <AddNewTaskButton size="small" className={"header-button"}/>
       </div>
-      {screenWidth < 560 && <SearchBar size={"big"}/>}
+      {screenWidth < 560 && <SearchBar size={"big"} className={"b-search-bar"}/>}
       <TasksNumber className="number-of-tasks"/>
       <div className="header-second-line">
         <div className="header-icons">
