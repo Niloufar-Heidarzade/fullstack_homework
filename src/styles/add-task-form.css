@@ -14,3 +14,95 @@
   display: none;
 
 }
+
+.add-task-form form {
+  padding: 15px 10px 15px 10px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between ;
+}
+.form-header{
+  display: flex;
+  justify-content: space-between;
+}
+.form-header h4 {
+  color: rgb(59, 59, 70);
+  font-weight: 600;
+}
+.form-header svg {
+  width: 20px;
+  stroke: rgb(88, 88, 88);
+} 
+.add-task-form label {
+  color:rgb(88, 88, 88);
+  font-size: 14px;
+}
+.input-and-label {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.add-task-form button {
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(116, 58, 215);
+  height: 35px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.add-task-form button:hover {
+  background-color: rgb(95, 50, 173);
+}
+.input-and-label input , .input-and-label select{
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  height: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  color: rgb(88, 88, 88);
+}
+.input-and-label textarea {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  color: rgb(88, 88, 88);
+}
+.add-task-form input[type="radio"] {
+  appearance: none; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  width: 15px;
+  height: 15px;
+  border: none; 
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  background-color: rgb(207, 209, 210);
+}
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 7px; 
+  height: 7px;
+  background-color: rgb(239, 65, 65); 
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.radio-input {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
