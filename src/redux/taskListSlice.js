@@ -17,9 +17,15 @@ const taskListSlice = createSlice({
     },
     setSelectedTaskId: (state , action) => {
       state.selectedTaskId = action.payload;
-    }
+    },
+    toggleTaskImportant: (state, action) => {
+      const task = state.allTasks.find((task) => task._id === action.payload);
+      if (task) {
+        task.important = !task.important;
+      }
+    },
   }
 })
 
-export const { addTask , removeTask , setSelectedTaskId} = taskListSlice.actions;
+export const { addTask , removeTask , setSelectedTaskId , toggleTaskImportant }= taskListSlice.actions;
 export default taskListSlice.reducer;
