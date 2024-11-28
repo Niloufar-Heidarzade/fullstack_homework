@@ -16,6 +16,7 @@ function AddTaskForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: {errors}
   } = useForm({
     defaultValues:{
@@ -54,6 +55,9 @@ function AddTaskForm() {
     }
   },[isOpen, dispatch])
   function closeForm() {
+    reset(); 
+    setImportant(false); 
+    setCompleted(false); 
     dispatch(controlAddTaskForm());
   }
   return(
