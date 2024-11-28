@@ -106,3 +106,7 @@ input[type="radio"]:checked::before {
   align-items: center;
   gap: 5px;
 }
+.error-message {
+  color: rgb(218, 82, 82);
+  font-size: 12px;
+}

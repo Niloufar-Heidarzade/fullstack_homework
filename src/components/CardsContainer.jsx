@@ -11,7 +11,7 @@ function CardsContainer() {
       <div className="cards">
       {tasksData.map((task , index) => {
         return(
-          <TaskCard isFirst={index === 0} key={task._id} title={task.title} description={task.description}  completed={task.completed} important={task.important} deadline={task.deadline}/>
+          <TaskCard isFirst={index === 0} key={task._id} id={task._id} title={task.title} description={task.description}  completed={task.completed} important={task.important} deadline={task.deadline}/>
         )
       })}
       </div>

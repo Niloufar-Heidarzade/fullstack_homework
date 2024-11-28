@@ -68,10 +68,12 @@ function AddTaskForm() {
         <div className="input-and-label">
           <label htmlFor="task-title">Title</label>
           <input placeholder="e.g, study for the test" id="task-title" type="text" {...register("task" , {required : "This field is required"})}/>
+          {errors.task && <span className="error-message">{errors.task.message}</span>}
         </div>
         <div className="input-and-label">
           <label htmlFor="date-input">Date</label>
           <input type="date" id="date-input" {...register("date")}/>
+          {errors.date && <span className="error-message">{errors.date.message}</span>}
         </div>
         <div className="input-and-label">
           <label htmlFor="task-description">Description (optional)</label>

@@ -5,7 +5,8 @@ const directoriesSlice = createSlice({
   initialState: {
     isEditModalOpen: false,
     isNewModalOpen: false,
-    isSidebarOpen: false
+    isSidebarOpen: false,
+    isRemoveModalOpen: false
   },
   reducers: {
     controlEdit: (state , action) => {
@@ -16,10 +17,13 @@ const directoriesSlice = createSlice({
     },
     controlSidebar: (state , action) => {
       state.isSidebarOpen = !state.isSidebarOpen;
+    },
+    controlRemove: (state, action) => {
+      state.isRemoveModalOpen = !state.isRemoveModalOpen;
     }
   }
 });
 
-export const {controlEdit , controlNew , controlSidebar} = directoriesSlice.actions;
+export const {controlEdit , controlNew , controlSidebar , controlRemove} = directoriesSlice.actions;
 
 export default directoriesSlice.reducer;
