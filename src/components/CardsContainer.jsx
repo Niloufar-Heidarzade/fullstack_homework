@@ -1,17 +1,17 @@
+import { useSelector } from "react-redux";
 import "../styles/cards-container.css";
-import data from "../assets/data/sample-data.json";
 import TaskCard from "./TaskCard";
 
 function CardsContainer() {
 
-  const taskData = data.tasks;
+  const tasksData = useSelector((state) => state.taskList.allTasks);
 
   return(
     <section className="cards-container">
       <div className="cards">
-      {taskData.map((task , index) => {
+      {tasksData.map((task , index) => {
         return(
-          <TaskCard isFirst={index === 0} key={task.id} title={task.title} description={task.description}  completed={task.completed} important={task.important} deadline={task.deadline}/>
+          <TaskCard isFirst={index === 0} key={task._id} title={task.title} description={task.description}  completed={task.completed} important={task.important} deadline={task.deadline}/>
         )
       })}
       </div>
