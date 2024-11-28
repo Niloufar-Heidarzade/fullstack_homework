@@ -7,6 +7,7 @@ import EditModal  from "./components/EditModal";
 import { useSelector } from "react-redux";
 import AddTaskForm from "./components/AddTaskForm";
 import RemoveTaskModal from "./components/RemoveTaskModal";
+import EditTaskForm from "./components/EditTaskForm";
 
 function App() {
   const isSidebarOpen = useSelector((state) => state.sidebar.isSidebarOpen);
@@ -22,6 +23,7 @@ function App() {
       <EditModal />
       <AddTaskForm />
       <RemoveTaskModal />
+      <EditTaskForm />
     </>
   )
 }

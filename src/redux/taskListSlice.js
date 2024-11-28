@@ -29,9 +29,15 @@ const taskListSlice = createSlice({
       if (task) {
         task.completed = !task.completed;
       }
+    },
+    editTask: (state , action) => {
+      const index = state.allTasks.findIndex((task) => task._id === action.payload._id);
+      if (index !== -1) {
+        state.allTasks[index] = { ...state.allTasks[index], ...action.payload };
+      }
     }
   }
 })
 
-export const { addTask , removeTask , setSelectedTaskId , toggleTaskImportant , toggleTaskCompleted}= taskListSlice.actions;
+export const { addTask , removeTask , setSelectedTaskId , toggleTaskImportant , toggleTaskCompleted , editTask}= taskListSlice.actions;
 export default taskListSlice.reducer;
