@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import "../styles/add-task-form.css";
 import { useEffect, useRef, useState } from "react";
 import { controlAddTaskForm } from "../redux/addTaskFormSlice";
-import { controlEdit } from "../redux/directoriesSlice";
+import { addTaskToDirectory, controlEdit } from "../redux/directoriesSlice";
 import { addTask } from "../redux/taskListslice";
 
 function AddTaskForm() {
@@ -13,6 +13,8 @@ function AddTaskForm() {
   const isOpen = useSelector((state) => state.addTaskForm.isAddTaskFormOpen);
   const dispatch = useDispatch();
   const formRef = useRef(null);
+  const directoryList = useSelector((state) => state.directory.directories);
+
   const {
     register,
     handleSubmit,
@@ -28,17 +30,34 @@ function AddTaskForm() {
       directory: "Main",
     },
   });
+  function closeForm() {
+    reset(); 
+    setImportant(false); 
+    setCompleted(false); 
+    dispatch(controlAddTaskForm());
+  }
   const onSubmit = (values) => {
-    dispatch(
-      addTask({
-        _id: crypto.randomUUID(),
-        title: values.task,
-        description: values.description,
-        completed: values.completed || false,
-        important: values.important || false,
-        deadline: values.date,
-      })
+    const task = {
+      _id: crypto.randomUUID(),
+      title: values.task,
+      description: values.description,
+      completed: values.completed || false,
+      important: values.important || false,
+      deadline: values.date,
+      directory: values.directory, 
+    };
+    dispatch(addTask(task));
+    const selectedDirectory = directoryList.find(
+      (dir) => dir.name === values.directory
     );
+    if (selectedDirectory) {
+      dispatch(
+        addTaskToDirectory({
+          directoryId: selectedDirectory.id,
+          task: task,
+        })
+      );
+    }
     closeForm();
   }
   useEffect(() => {
@@ -54,12 +73,7 @@ function AddTaskForm() {
       document.removeEventListener("mousedown" , handleClickOutside);
     }
   },[isOpen, dispatch])
-  function closeForm() {
-    reset(); 
-    setImportant(false); 
-    setCompleted(false); 
-    dispatch(controlAddTaskForm());
-  }
+  
   return(
     <div className={isOpen ? "add-task-form" : "no-add-task-form"} ref={formRef}>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -86,8 +100,13 @@ function AddTaskForm() {
         <div className="input-and-label">
           <label htmlFor="directory-selection">Select a directory</label>
           <select id="directory-selection" {...register("directory")}>
-            <option>Main</option>
-            <option>Secondary</option>
+            {
+              directoryList.map((dir , index) => {
+                return(
+                  <option key={index}>{dir.name}</option>
+                )
+              })
+            }
           </select>
         </div>
         <div className="radio-input">

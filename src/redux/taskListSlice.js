@@ -6,7 +6,8 @@ const taskListSlice = createSlice({
   name:"taskList",
   initialState: {
     allTasks: tasksData,
-    selectedTaskId: null
+    selectedTaskId: null,
+    query: "",
   },
   reducers: {
     addTask: (state, action) => {
@@ -35,9 +36,12 @@ const taskListSlice = createSlice({
       if (index !== -1) {
         state.allTasks[index] = { ...state.allTasks[index], ...action.payload };
       }
-    }
+    },
+    setSearchQuery: (state, action) => {
+      state.query = action.payload.toLowerCase();
+    },
   }
 })
 
-export const { addTask , removeTask , setSelectedTaskId , toggleTaskImportant , toggleTaskCompleted , editTask}= taskListSlice.actions;
+export const { addTask , removeTask , setSelectedTaskId , toggleTaskImportant , toggleTaskCompleted , editTask , setSearchQuery}= taskListSlice.actions;
 export default taskListSlice.reducer;

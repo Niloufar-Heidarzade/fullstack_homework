@@ -6,7 +6,8 @@
     "description": "Implement CRUD operations for directory and task collections",
     "completed": false,
     "important": true,
-    "deadline": "2024-10-20T00:00:00Z"
+    "deadline": "2024-10-20T00:00:00Z",
+    "directory": "Main"
   },
   {
     "_id": "111111111111111111",
@@ -14,7 +15,8 @@
     "description": "Revise React and Vue basics",
     "completed": false,
     "important": false,
-    "deadline": "2024-11-18T00:00:00Z"
+    "deadline": "2024-11-18T00:00:00Z",
+    "directory": "Main"
   },
   {
     "_id": "333333333333333333",
@@ -22,7 +24,8 @@
     "description": "Resolve pagination and sorting issues in API",
     "completed": true,
     "important": false,
-    "deadline": "2024-11-14T00:00:00Z"
+    "deadline": "2024-11-14T00:00:00Z",
+    "directory": "Main"
   }
 ]
 }

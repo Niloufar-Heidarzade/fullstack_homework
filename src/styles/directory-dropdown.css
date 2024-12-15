@@ -72,3 +72,7 @@
 .directories div:hover , .small-directories div:hover{
   color: rgb(228, 66, 66);
 }
+.directory-dropdown .link {
+  text-decoration: none; 
+  color: inherit;
+}

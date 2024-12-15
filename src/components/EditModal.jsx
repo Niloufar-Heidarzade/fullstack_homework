@@ -2,11 +2,22 @@ import { controlEdit } from "../redux/directoriesSlice";
 import "../styles/edit-modal.css";
 import { useSelector, useDispatch} from "react-redux";
 import {useRef , useEffect} from "react";
+import { useState } from "react";
+import { updateDirectory } from "../redux/directoriesSlice";
 
 function EditModal() {
   const dispatch = useDispatch();
   const isModalOpen = useSelector((state) => state.directory.isEditModalOpen);
   const modalRef = useRef(null);
+  const editingIndex = useSelector((state) => state.directory.editingIndex);
+  const directories = useSelector((state) => state.directory.directories);
+  const [editingName, setEditingName] = useState("");
+
+  useEffect(() => {
+    if (isModalOpen && editingIndex !== null) {
+      setEditingName(directories[editingIndex].name);
+    }
+  }, [isModalOpen, editingIndex, directories]);
   useEffect(() => {
     function handleClickOutside(event) {
       if(modalRef.current && !modalRef.current.contains(event.target)) {
@@ -21,9 +32,16 @@ function EditModal() {
     }
   },[isModalOpen,dispatch])
 
+
+  function handleSave() {
+    if (editingName.trim() === "") return; 
+    dispatch(updateDirectory({ index: editingIndex, newName: editingName }));
+    dispatch(controlEdit()); 
+  }
   function handleClose() {
     dispatch(controlEdit());
   }
+
   return(
     <div className={isModalOpen ? "edit-modal" : "no-edit-modal"} ref={modalRef}>
       <div className="first-line">
@@ -33,10 +51,16 @@ function EditModal() {
         </svg>
       </div>
       <div className="second-line">
-        <label for="directory">Title</label>
-        <input type="text" placeholder="secondary" id="directory"/>
+        <label htmlFor="directory">Title</label>
+        <input 
+        type="text"
+        placeholder="Edit directory name"
+        id="directory"
+        value={editingName}
+        onChange={(e) => setEditingName(e.target.value)}
+        />
       </div>
-      <button>Edit</button>
+      <button onClick={handleSave}>Edit</button>
     </div>
   )
 }

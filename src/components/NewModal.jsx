@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/new-modal.css";
 import { useEffect, useRef } from "react";
-import { controlNew } from "../redux/directoriesSlice";
+import { controlNew , addDirectory} from "../redux/directoriesSlice";
 
 function NewModal() {
   const dispatch = useDispatch();
@@ -24,6 +24,16 @@ function NewModal() {
   function handleCloseModal() {
     dispatch(controlNew());
   }
+  function handleCreate() {
+    const directoryName = document.getElementById("directoryName").value.trim();
+    if (directoryName) {
+      dispatch(addDirectory(directoryName));
+      document.getElementById("directoryName").value = ""; 
+      dispatch(controlNew());
+    } else {
+      alert("Directory name cannot be empty!");
+    }
+  }
 
   return  (
     <div className={isModalOpen ? "new-modal" : "no-new-modal"} ref={modalRef}>
@@ -37,7 +47,7 @@ function NewModal() {
         <label for="directoryName">Title</label>
         <input type="text" placeholder="Enter a directory name" id="directoryName"/>
       </div>
-      <button>Create</button>
+      <button onClick={handleCreate}>Create</button>
     </div>
   )
 }

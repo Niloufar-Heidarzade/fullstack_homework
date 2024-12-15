@@ -35,8 +35,11 @@
   padding-top: 10px;
   padding-bottom: 10px;
   cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;
 }
-.all-tasks {
+.active-option {
   margin-top: 10px ;
   color: rgb(228, 66, 66);
   background-color: rgb(238, 227, 235);

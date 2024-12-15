@@ -10,7 +10,7 @@ import { useSelector , useDispatch} from "react-redux";
 import {controlSidebar} from "../redux/sidebarSlice.js";
 import { useEffect , useState} from "react";
 
-function Header() {
+function Header({onSortChange}) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const isSidebarOpen = useSelector((state) => state.sidebar.isSidebarOpen)
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ function Header() {
           <ShowInRows />
           <ShowInCards />
         </div>
-        <SortBy className="sort-dropdown"/>
+        <SortBy className="sort-dropdown" onSortChange={onSortChange}/>
       </div>
     </header>
   )

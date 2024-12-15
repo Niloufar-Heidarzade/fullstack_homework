@@ -6,7 +6,7 @@ import { useState } from "react";
 import { toggleTaskImportant } from "../redux/taskListslice";
 import { controlEditTaskForm } from "../redux/addTaskFormSlice";
 
-function TaskCard({isFirst ,id ,title , description , completed , important , deadline}) {
+function TaskCard({isFirst ,id ,title , description , completed , important , deadline , directory}) {
   const formatDate = (dateString) => {
     const options = { month: "2-digit", day: "2-digit", year: "numeric" };
     return new Date(dateString).toLocaleDateString("en-US", options);
@@ -14,7 +14,7 @@ function TaskCard({isFirst ,id ,title , description , completed , important , de
   const dispatch = useDispatch();
   return (
     <div className={isFirst ? "card-first" : "card"}>
-      <div className="tag">Main</div>
+      <div className="tag">{directory}</div>
       <div className="title-and-description">
         <h4 className={isFirst && "first-title"}>{title}</h4>
         <p className={isFirst && "first-description"}>{description}</p>

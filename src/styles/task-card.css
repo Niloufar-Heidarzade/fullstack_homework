@@ -34,7 +34,6 @@
   background: rgb(249, 174, 174);
   color: rgb(172, 10, 10);
   font-size: 14px;
-  width: 60px;
   height: 30px;
   display: flex;
   justify-content: center;
@@ -44,6 +43,8 @@
   position: absolute;
   right: 10px;
   top: -30px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .card h4 {
   font-size: 13px;
